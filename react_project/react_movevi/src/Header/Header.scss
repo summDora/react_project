@@ -1,0 +1,35 @@
+.Header{
+    background:black;
+    padding:10px 80px;
+    height:80px;
+    width:100%;
+    min-width: 1200px;
+    display:flex;
+    justify-content: space-between;
+    position:absolute;
+    top:0px;
+    z-index:99;  
+    a{
+        padding:10px 30px;
+        line-height:60px;
+        color:#cacaca;
+        font-size:18px;
+        letter-spacing:2px;
+    } 
+    a:hover{
+        color:#fff;
+    }
+    .lightbg{
+        color:#fff;
+    }
+    .logo{
+        height:35px;
+        margin:12px 0 0 0;
+    }
+    .list{
+        flex:1;
+    }
+    .buy{
+        margin:12px 0px 0px 86px;
+    }
+}
