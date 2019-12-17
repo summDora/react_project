@@ -1,0 +1,110 @@
+.Product{
+    width:100%;
+    min-height:100%;
+    padding-top: 80px;
+    .picpower{
+        display: flex;
+        min-width: 1200px;
+        height: 100vh;
+        min-height: 600px;
+        justify-content: space-between;
+        position: relative;
+        .child{
+            display: flex;
+            height: 100%;
+            flex-direction: column;
+            img{
+                width: 100%;
+            }
+            .top{
+                margin-bottom: 2px;
+            }
+        }
+        .middle{
+            margin:0px 2px;
+            .imgpower_outline{
+                margin-bottom: 2px;
+            }
+        }
+        .right .imgpower_outline{
+            margin-bottom: 2px;
+        }
+    }
+    .color{
+        display:flex;
+        width:100%;
+        min-width: 1200px;
+        justify-content: space-between;
+        .leftpart,.rightpart{
+            width: 46%;
+        }
+        .leftpart{
+            padding-top: 5%;
+            text-align: right;
+            img{
+                height: 90%;
+                max-width: 125%;
+            }
+        } 
+        .rightpart{
+            padding:2% 0px 2%;
+            text-align: left;
+            .title{
+                font-size: 40px;
+                margin: 0px;
+                padding: 0px;
+                margin-bottom: 0px;
+            }
+            .btn{
+                height: 44px;
+                margin:20px 0px 40px 0px;
+                span{
+                    display: inline-block;
+                    height: 100%;
+                    width: 44%;
+                    line-height: 36px;
+                    border: 2px solid black;
+                    margin-right: 10px;
+                    text-align: center;
+                    border-radius: 22px;
+                    cursor: pointer;
+                    font-size: 19px;
+                }
+                span:hover{
+                    color: red;
+                }
+                .bgcolor{
+                    background: black;
+                    color: red;
+                }
+            }
+            .info{
+                display: flex;
+                flex-wrap: wrap;
+                .infodetail{
+                    width: 50%;
+                    font-size: 18px;
+                    .title{
+                        font-size: 18px;
+                        padding: 0px;margin: 0px 0px 3px 0px;
+                        font-weight: bolder;
+                        position: relative;
+                    }
+                    .title:before{
+                        content: '';
+                        height: 1px;
+                        width: 30px;
+                        background: rgb(180, 177, 177);
+                        position: absolute;
+                        top:-10px;
+                        left: 0px;
+                    }
+                    .content{
+                        margin-bottom: 30px;
+                    }
+                }
+            }
+            
+        }
+    }
+}

@@ -1,0 +1,59 @@
+.Homescreen{
+    height:900px;
+    width: 100%;
+    min-width: 1200px;
+    min-height: 600px; 
+    background-size: cover;
+    background-repeat: no-repeat;  
+}
+.back{
+    width: 100%;
+    position: relative;
+    background-position:center
+    /* background-position:100px 100%; */
+}
+.rightscreen{
+    text-align: left;
+    position: relative;
+    .leftimg{
+       max-height: 100%;
+       padding:30px 50px 30px 11%;
+       max-width: 50%;
+       position: absolute;
+       top: 50%;
+       transform: translateY(-50%);
+    }
+    .tv{
+        position: absolute;
+        left: 6%;
+    }
+    .list{
+        right:12%;
+    }
+}
+.leftscreen{
+    text-align: left;
+    position: relative;
+    .list{
+        left:0px;
+        position: absolute;
+    }
+}
+.backright{
+    color: #fff;
+    width: 100%;
+    position: relative;
+    background-position: center;
+    .list{
+        right: 13%;
+        .content .title,.content .info{
+            color: #fff;
+        }
+    }
+}
+.toplist{
+    .list{
+        left: 0;
+        top:25%
+    }
+}

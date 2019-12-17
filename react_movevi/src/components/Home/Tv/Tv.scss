@@ -1,0 +1,24 @@
+.tv{
+    position: absolute !important;
+    height: auto;
+    left: 50%;
+    top: 50%;
+    width: 40% !important;
+    min-width: 550px;
+    border: 1px solid rgba(215,215,215,1);
+    background: linear-gradient(136deg,rgba(242,242,242,1) 0%,rgba(203,203,203,1) 100%);
+    border-radius: 10px;
+    transform: translateY(-50%);
+    padding: 28px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    .top{
+        width: 100% !important;
+        margin-bottom: 20px;
+    }
+    .bot{
+        height: 48px;
+    }
+}

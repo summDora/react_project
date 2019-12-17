@@ -1,0 +1,20 @@
+.Firstscreen{
+    min-width:1200px;
+    height:calc(100vh - 80px);
+    min-height: 550px;
+    width: 100%;
+    background-size: cover;
+    text-align: center;
+    color:#fff;
+    position:relative;
+}
+.hightitle{
+    font-size: 50px;
+    letter-spacing: 4px;
+    position:relative;
+    padding-top:14%;
+    margin-bottom:10px
+}
+.lowertitle{
+    font-size:60px;
+}

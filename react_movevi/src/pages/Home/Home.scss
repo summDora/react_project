@@ -1,0 +1,39 @@
+.Home{
+    width: 100%;
+    min-height: 100%;
+    padding-top:80px;
+    .home_bottom{
+        display: flex;
+        max-height: 870px;
+        .rightpart{
+            flex: 1;
+            img{
+                width: 100%;
+            }
+        }
+        .leftpart{
+            width: 50%;
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            color: #fff;
+            font-size: 18px;
+            padding-top:100px;
+            line-height: 33px;
+            position: relative;
+            .vip{
+                margin-top: 30px;
+            }
+            .footer{
+                width: 100%;
+                font-size: 14px;
+                border-top: none;
+                position: absolute;
+                bottom: 18%;
+                left: 50%;
+                transform: translateX(-50%);
+                color: #999999;
+            }
+        }
+    }
+}
