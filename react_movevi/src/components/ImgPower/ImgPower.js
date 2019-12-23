@@ -12,7 +12,6 @@ class ImgPower extends React.Component{
     }
     imgpower(){
         const scrollTop = document.getElementsByClassName('picpower')[0].offsetTop
-        console.log(scrollTop,'imgpower')
         window.scrollTo(0,scrollTop);
         document.addEventListener('DOMMouseScroll', this.scrollFunc, {passive: false });
         this.setState({
@@ -27,12 +26,11 @@ class ImgPower extends React.Component{
 
     }
     scrollFunc(evt) {  
-        console.log(evt,'ddddd')
         evt = evt || window.event;  
-          if(evt.preventDefault) {  
+        if(evt.preventDefault) {  
             evt.preventDefault();  
             evt.stopPropagation();  
-          } else {  
+        } else {  
             evt.cancelBubble=true;  
             evt.returnValue = false;  
         }  

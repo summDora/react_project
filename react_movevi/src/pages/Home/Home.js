@@ -165,7 +165,7 @@ class Home extends React.Component{
     }
     render(){
         const screenList=this.state.homescreen.map((item,index)=>
-            <Homescreen type={item} key={index} ></Homescreen>
+            <Homescreen type={item} key={index}></Homescreen>
         )
         return(
             <div className='Home'>

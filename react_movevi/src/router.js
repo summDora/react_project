@@ -5,6 +5,7 @@ import Product  from './pages/Product/Product'
 import New  from './pages/New/New'
 import Brand  from './pages/Brand/Brand'
 import Software  from './pages/Software/Software'
+import Vip  from './pages/Vip/Vip'
 
 const Routes = () => {
     return (
@@ -14,6 +15,7 @@ const Routes = () => {
             <Route  path="/product" component={Product} />
             <Route  path="/software" component={Software} />
             <Route  path="/brand" component={Brand} /> 
+            <Route  path="/vip" component={Vip} /> 
         </Switch>       
     )
 };

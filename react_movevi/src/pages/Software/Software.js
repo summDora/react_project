@@ -3,10 +3,12 @@ import './Software.scss'
 import Firstscreen from './../../components/Firstscreen/Firstscreen'
 import SecondTab from './../../components/SecondTab/SecondTab'
 import ProductInfo from '../../components/ProductInfo/ProductInfo'
+import {Button} from 'antd'
 
 class  Software  extends React.Component{
     constructor(props){
         super(props)
+        this.myRef = React.createRef();
         this.state={
             imgsrc:require('./../../assets/images/sw_top_bg.png'),
             tabs:[
@@ -30,7 +32,7 @@ class  Software  extends React.Component{
                 {
                     type:1,
                     title:'多人联网互动的体感游戏',
-                    content:'羽毛球】【乒乓球】【网球】等多种游戏形式',
+                    content:'【羽毛球】【乒乓球】【网球】等多种游戏形式',
                     imgsrc:require('./../../assets/images/sw_game_2.png'),
                     imgsrcpower:require('./../../assets/images/sw_game_2_big.png'),
                     power:true,
@@ -59,11 +61,13 @@ class  Software  extends React.Component{
                     imgsrcpower:require('./../../assets/images/sw_game_4_big.png'),
                     power:true,
                     position:{
-                        top: '18%',
-                        left: '34%'
+                        top: '16%',
+                        left: '33%'
                     }
                 },
             ],
+            scrollTop:null,
+            position:'absolute'
         }
     }
     componentDidMount() {
@@ -72,8 +76,21 @@ class  Software  extends React.Component{
     componentWillUnmount() {
         window.removeEventListener('scroll', this.orderScroll);
     }
-    orderScroll() {
-        console.log('scroll');
+    orderScroll=()=>{
+        //请勿直接更改状态 需要使用setState({}) 直接this.state.xxxx不会刷新dom
+        this.setState({
+            scrollTop:document.documentElement.scrollTop || window.pageYOffset || document.body.scrollTop
+        })
+        const top=this.refTab.offsetTop
+        if(this.state.scrollTop>=top){
+            let tab=document.getElementsByClassName('secondetab')[0]
+            tab.style['position']="fixed";
+            tab.style['top']="0px";
+        }
+        if(this.state.scrollTop<top){
+            let tab=document.getElementsByClassName('secondetab')[0]
+            tab.style['position']="relative";
+        }
     }
     render(h) {
         const footgameList=this.state.footgameInfo.map((item,index)=>
@@ -85,12 +102,59 @@ class  Software  extends React.Component{
                 imgsrc={this.state.imgsrc}
                 highTitle='MOVE VI' 
                 lowerTitle='全新创造的家庭健身FitOS系统' />
-                <SecondTab
+                <SecondTab 
+                msg={"传递给子组件的消息：" + this.state.scrollTop}
+                style={{position:this.state.position}}
                 tab={this.state.tabs} />
-                <div className="tabbar" id="footgame">脚游</div>
+                <div className="tabbar"  ref={(r)=>{this.refTab = r}} id="footgame">脚游</div>
                 {footgameList}
                 <div className="tabbar" id="social">社交</div>
+                    <div className="social">
+                        <div className="contain">
+                            <img src={require('./../../assets/images/sw_social_1.png')} alt='木卫六跑步机' />
+                        </div>
+                        <div className="contain">
+                            <div className="font">
+                            <div className="content">FitOS系统基于地理位置和运动轨迹，<br/>为你推荐志同道合的跑友。<br/>你可以与你感兴趣的任何人成为好友并与他们聊天</div>
+                            </div>
+                        </div>
+                        <div className="contain">
+                            <div className="font">
+                            <div className="content">你可以通过木卫六APP定向邀请你的好友<br/>参与游戏对战或参加健身课程，<br/>并通过FitOS系统，<br/>与木卫六所有用户产生真实连接。</div>
+                            </div>
+                        </div>
+                        <div className="contain">
+                            <img src={require('./../../assets/images/sw_social_3.png')} alt='木卫六跑步机'  />
+                        </div>
+                    </div>
+                    <div className="comment">
+                        <img src={require('./../../assets/images/sw_social_5.png')} alt="木卫六跑步机" />
+                        <img src={require('./../../assets/images/sw_social_4.png')} alt="木卫六跑步机" />
+                    </div>
                 <div className="tabbar" id="course">课程</div>
+                <div className="live">
+                    <div className="top">
+                        <p className="title">Unlock all the benefits of the MOVEVI experience.</p>
+                        <p className="info">
+                        家居式场景，沉浸式训练，私人空间，为您带来便捷运动方式。<br />
+                        您可随时体验跑步、瑜伽、拳击、HIIT等专业私教课程。
+                        </p>
+                        <p className="bot">MOVIVI木卫六需单独购买</p>
+                        <Button>点击了解会员特权</Button>
+                    </div>
+                    <div className="middle">
+                        <img src={require('./../../assets/images/sw_live_1.png')}  alt="木卫六跑步机" />
+                    </div>
+                    <div className="bottom">
+                        <div className="leftpart">  
+                        <img src={require('./../../assets/images/sw_live_bottom.png')}  alt="木卫六跑步机" />
+                        </div>
+                        <div className="rightpart">
+                        <p className="title">REDAY TO TRY THE MOVEVI?</p>
+                        <p className="info"> 随时随地享受更便捷的专业指导<br/>期待您的加入</p>
+                        </div>
+                    </div>
+                </div>
             </div>
         )
     }

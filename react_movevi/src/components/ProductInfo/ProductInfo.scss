@@ -4,6 +4,7 @@
     height: auto;
     min-height: 400px;
     display: flex;
+    position: relative;
     .fontpart{
         width: 50%;
         text-align: center;
@@ -27,10 +28,30 @@
     .imgpart{
         min-height: 400px;
         width: 50%;
+        position: relative;
         img{
             width: 100%;
             height: 100%;
+            cursor: pointer;
         }
+        .closeicon{
+            width: 10px !important;
+            height: 10px !important;
+            position: absolute;
+            transition: all 0.6s;
+        }
+        .gamepic:hover + .closeicon {
+            transform: scale(1.8);
+        }
+    }
+    .bigimg{
+        position: absolute;
+        width: 100%;
+        height: 100vh;
+        min-width: 400px;
+        top:0px;
+        left: 0px;
+        z-index: 11;
     }
 }
 .reverse{
