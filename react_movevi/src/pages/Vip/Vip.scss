@@ -5,15 +5,21 @@ $red:#e50019;
     min-width: 1200px;
     min-height: 100%;
     padding-top: 80px;
-    .two{
+    .two,.question{
         width: 100%;min-width: 1200px;
     }
     .two{
         height: 100vh;
         background: url('./../../assets/images/vip-center-bg.png') 100%;
         position: relative;
+        .title{
+            font-size: 25px;
+            color: #fff;
+            padding-top: 40px;
+        }
         .contentbox{
             width: 45%;
+            height: 62%;
             min-width: 800px;
             min-height: 400px;
             display: flex;
@@ -67,5 +73,21 @@ $red:#e50019;
             }
         }
 
+    }
+    .question{
+        padding:80px 30%;
+        min-height: 500px;
+        .title{
+            text-align: left;
+            font-size: 24px;
+            color: black;
+            line-height: 40px;
+        }
+        .ant-collapse-item:nth-of-type(1){
+            border-top: 1px solid black;
+        }
+        .ant-collapse-item{
+            text-align: left;
+        }
     }
 }

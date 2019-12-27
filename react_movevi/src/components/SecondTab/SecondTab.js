@@ -12,7 +12,9 @@ class SecondTab extends React.Component{
         )
         return(
             <div className='secondetab' ref={(r)=>{this.gettop = r}}>
+                <div className='tabbox'>
                 {tabs}
+                </div>
             </div>
         )
     }

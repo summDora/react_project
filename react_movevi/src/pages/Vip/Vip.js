@@ -1,7 +1,9 @@
 import './Vip.scss'
+import React, { Component } from 'react';
 import Firstscreen from './../../components/Firstscreen/Firstscreen'
 import {Button} from 'antd'
-import React, { Component } from 'react';
+import { Collapse } from 'antd';
+const { Panel } = Collapse;
 
 export class Vip extends Component {
     constructor(props){
@@ -35,7 +37,6 @@ export class Vip extends Component {
                 {item.title}
             </p>
         )
-
         return (
             <div className='Vip'>
                 <Firstscreen 
@@ -44,6 +45,7 @@ export class Vip extends Component {
                 lowerTitle='与所有会员一起，开启你的木卫六之旅'>
                 </Firstscreen>
                 <div className="two">
+                    <p className='title'>通过两种方式<br />获得适合您的会员资格</p>
                     <div className="contentbox">
                         <div className="box">
                             <div className="top">
@@ -72,7 +74,23 @@ export class Vip extends Component {
                         </div>
                     </div>
                 </div>
-
+                <div className="question">
+                    <p className="title">常见问题解答</p>
+                    <Collapse accordion bordered={false} defaultActiveKey={['1']}>
+                        <Panel header="会员时间和费用？" key="1">
+                            <p style={{ paddingLeft: 24 }}>会员时间为30天，费用为99元。</p>
+                        </Panel>
+                        <Panel header="VIP星如何获得？" key="2">
+                            <p style={{ paddingLeft: 24 }}>跑步2公里后自动获得，每天最多1颗星。</p>
+                        </Panel>
+                        <Panel header="VIP星如何抵扣？" key="3">
+                            <p style={{ paddingLeft: 24 }}>购买会员后，自动开通会员，自动拥有会员特权。</p>
+                        </Panel>
+                        <Panel header="如何使用会员？" key="4">
+                            <p style={{ paddingLeft: 24 }}>购买会员时，可通过微信或支付宝支付。</p>
+                        </Panel>
+                    </Collapse>
+                </div>
             </div>
         );
     }
