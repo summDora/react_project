@@ -63,10 +63,9 @@ export default class Home extends Component {
             url:'/webProduct/list.html',
             method:'GET',
           }).then(function(res){
-              _this.setState({
-                  classlist:res.data
-              })
-            console.log(_this.state.classlist[0])
+                _this.setState({
+                    classlist:res.data
+                })
           })
     }
     render() {
