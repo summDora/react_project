@@ -10,6 +10,7 @@ beforeCreate的时候千万不要去修改data里面赋值的数据，最早也�
 
 #### `vue-----beforeMount------挂载到dom前------componentWillMount---react（废弃）`
 虚拟dom已经创建完成，马上就要渲染,在这里也可以更改数据，不会触发updated
+beforeMount的时候，$el还只是我们在HTML里面写的节点，然后到mounted的时候，它就把渲染出来的内容挂载到了DOM节点上。这中间的过程其实是执行了render function的内容。
 
 #### `vue-----mounted------挂载到dom后----------componentDidMount-------react（常用）`
 此时，组件已经出现在页面中，数据、真实dom都已经处理好了,事件都已经挂载好了
